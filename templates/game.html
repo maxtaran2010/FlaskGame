@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css"
+        integrity="sha512-KXol4x3sVoO+8ZsWPFI/r5KBVB/ssCGB5tsv2nVOKwLg33wTFP3fmnXa47FdSVIshVTgsYk/1734xSk9aFIa4A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<!-- !!!!!!!!!! ДОКИ ПО ФРЕЙМВОРКУ: https://semantic-ui.com/introduction/getting-started.html !!!!!!!!!! -->
+
+<body>
+    <nav class="ui stackable menu">
+        <div class="item green"><strong>Лабиринт</strong></div>
+        <a class="item" href="/">Главная</a>
+        <a class="item active" href="#">Игра</a>
+    </nav>
+
+    
+
+    <div class="container">
+        <div class="ui vertical menu m1">
+            <div class="item">
+                <div class="header">Код:</div>
+                <div class="ui action input">
+                    <input id="code1" type="text" value="e45io0p">
+                    <button id="copy" class="ui right teal labeled icon button" tabindex="0">
+                        <i class="copy icon"></i>
+                        Copy
+                    </button>
+                </div>
+            </div>
+            <div class="item">
+                <div class="header">Участники:</div>
+                <p>vlppz, max</p>
+            </div>
+            <div class="item">
+                <form>
+                    <button type="submit" class="ui button inverted red">Закрыть</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    
+    <script>
+        $('#copy').click(function() {
+            navigator.clipboard.writeText($("#code1").val())
+            $('#copy').blur()
+        })
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"
+        integrity="sha512-Xo0Jh8MsOn72LGV8kU5LsclG7SUzJsWGhXbWcYs2MAmChkQzwiW/yTQwdJ8w6UA9C6EVG18GHb/TrYpYCjyAQw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>

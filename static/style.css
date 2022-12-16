@@ -1,0 +1,22 @@
+.grad {
+    background-color: #FAE7B5;
+}
+
+/* 47, 177, 163 */
+
+.green {
+    background-color: rgb(47, 177, 163)!important;
+    color: white!important;
+}
+
+.container {
+    margin-left: 10px;
+}
+
+.i1 {
+    margin-right: 10px;
+}
+
+.m1 {
+    width: 23rem!important;
+}
