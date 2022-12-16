@@ -28,8 +28,8 @@
                 <div class="ui action input">
                     <input id="code1" type="text" value="e45io0p">
                     <button id="copy" class="ui right teal labeled icon button" tabindex="0">
-                        <i class="copy icon"></i>
-                        Copy
+                        <i id="icn1" class="copy icon"></i>
+                        <span class="text1">Copy</span>
                     </button>
                 </div>
             </div>
@@ -43,7 +43,11 @@
                 </form>
             </div>
         </div>
+        <div class="fill ui vertical menu">
+
+        </div>
     </div>
+
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -51,8 +55,20 @@
     <script>
         $('#copy').click(function() {
             navigator.clipboard.writeText($("#code1").val())
+            $('.text1').text("Copied")
+            $('#icn1').removeClass('copy')
+            $('#icn1').addClass('check')
+            $('#icn1').addClass('circle')
             $('#copy').blur()
+            setTimeout(restoreicon, 1000)
         })
+
+        function restoreicon() {
+            $('.text1').text("Copy")
+            $('#icn1').removeClass('check')
+            $('#icn1').removeClass('circle')
+            $('#icn1').addClass('copy')
+        }
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"

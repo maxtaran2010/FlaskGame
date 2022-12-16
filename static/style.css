@@ -18,5 +18,12 @@
 }
 
 .m1 {
-    width: 23rem!important;
+    width: 24rem!important;
+}
+
+.fill {
+    width: 77rem!important;
+    height: 50rem!important;
+    margin-left: 354px!important;
+    margin-top: -228px!important;
 }
