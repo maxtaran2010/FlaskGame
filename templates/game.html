@@ -26,7 +26,7 @@
             <div class="item">
                 <div class="header">Код:</div>
                 <div class="ui action input">
-                    <input id="code1" type="text" value="e45io0p">
+                    <input id="code1" type="text" value="{{ code }}">
                     <button id="copy" class="ui right teal labeled icon button" tabindex="0">
                         <i id="icn1" class="copy icon"></i>
                         <span class="text1">Copy</span>
@@ -35,10 +35,15 @@
             </div>
             <div class="item">
                 <div class="header">Участники:</div>
-                <p>vlppz, max</p>
+                <p>
+                    {% for i in room['users'] %}
+                        {{ i }},
+                    {%  endfor %}
+                </p>
             </div>
             <div class="item">
-                <form>
+                <form action="close">
+                    <input type="hidden" value="{{ code }}" name="id">
                     <button type="submit" class="ui button inverted red">Закрыть</button>
                 </form>
             </div>
@@ -51,7 +56,7 @@
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    
+
     <script>
         $('#copy').click(function() {
             navigator.clipboard.writeText($("#code1").val())
